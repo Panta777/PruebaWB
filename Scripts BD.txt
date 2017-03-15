@@ -1,0 +1,35 @@
+CREATE TABLE `rol` (
+  `Id_Rol` int(11) NOT NULL AUTO_INCREMENT,
+  `NombrePuesto` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `Descripcion` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `Sueldo` double DEFAULT NULL,
+  `Disponible` char(1) COLLATE utf8_spanish_ci DEFAULT NULL COMMENT '0 = disponible, 1 = no disponible',
+  PRIMARY KEY (`Id_Rol`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+
+
+CREATE TABLE `empleado` (
+  `Id_Empleado` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre_Completo` varchar(55) COLLATE utf8_spanish2_ci NOT NULL,
+  `Direccion` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `Telefono` varchar(8) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `Fecha_Nac` date DEFAULT NULL,
+  `id_rol` int(11) DEFAULT NULL,
+  `usuario` varchar(50) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  PRIMARY KEY (`Id_Empleado`),
+  KEY `fk_id_rol` (`id_rol`),
+  CONSTRAINT `fk_id_rol` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`Id_Rol`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+
+
+
+Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Administrador", "Administración", 8000, '0');
+-- Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Gerente", "Gerencia", 28000, '0');
+-- Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Secretaria", "Archivos y Secretariado", 4000, '0');
+-- Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Contador", "Asunto Contables", 8000, '1');
+
+Insert into empleado(NombreCompleto, )values("Administrador", "Administración", 8000, '0');

@@ -1,0 +1,34 @@
+.tz-header {
+    z-index: 99999;
+}
+.pnGreen {
+    background: #52BB46 !important;
+	min-height:50px;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.tz-headerTop-box {
+    background: #52BB46 !important;
+	display:block;
+	border:1px solid gray;
+}
+#pnMenu{
+	min-height:160px;
+	border:1px solid gray;
+}
+
+
+
+#pnSliderArea{
+	min-height:460px;
+	border:1px solid gray;
+}
+
+
+
+#pnFoot{
+	min-height:80px;
+	display: block;
+	background: #f0f0f0;
+	border-top: 1px solid #e0e0e0;
+}

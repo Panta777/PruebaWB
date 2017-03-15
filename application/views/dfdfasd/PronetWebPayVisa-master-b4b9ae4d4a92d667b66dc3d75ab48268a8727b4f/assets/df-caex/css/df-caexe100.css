@@ -1,0 +1,93 @@
+.select2-dropdown {
+    background-color: white;
+    border: 1px solid #334066;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    left: -100000px;
+    width: 100%;
+    z-index: 1051; }
+
+
+.form-group .select2-container {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100% !important;
+    margin-bottom: 0;
+    display: table;
+    table-layout: fixed;
+}
+
+.select2-container .select2-selection--single {
+    height: 34px;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #334066;
+    border-radius: 4px; }
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 34px; }
+.select2-container--default .select2-selection--single .select2-selection__clear {
+    cursor: pointer;
+    float: right;
+    font-weight: bold; }
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #999; }
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 32px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 20px; }
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #334066 transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -2px;
+    position: absolute;
+    top: 50%;
+    width: 0; }
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #334066;
+    color: white;
+}
+
+.select2-drop-active {
+    border: 1px solid #334066;
+    border-top: none;
+}
+
+.select2-drop.select2-drop-above.select2-drop-active {
+    border-top: 1px solid #334066;
+}
+
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices {
+    border: 1px solid #334066;
+    outline: none;
+
+    -webkit-box-shadow: 0 0 10px #334066;
+    box-shadow: 0 0 10px #418ee2;
+}
+
+.inputs input, .inputs select, .inputs textarea {
+    border-width: 1px !important;
+}
+
+.form-control {
+    border-color: #334066 !important;
+}
+
+.form-group {
+    margin-bottom: 15px !important;
+}
+
+.error { color: #b22c3f }
