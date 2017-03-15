@@ -25,11 +25,17 @@ CREATE TABLE `empleado` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 
+truncate table rol;
+truncate table empleado;
 
 
 Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Administrador", "Administración", 8000, '0');
--- Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Gerente", "Gerencia", 28000, '0');
--- Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Secretaria", "Archivos y Secretariado", 4000, '0');
--- Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Contador", "Asunto Contables", 8000, '1');
+Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Gerente", "Gerencia", 28000, '0');
+Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Secretaria", "Archivos y Secretariado", 4000, '0');
+Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Contador", "Asunto Contables", 8000, '1');
 
-Insert into empleado(NombreCompleto, )values("Administrador", "Administración", 8000, '0');
+Insert into empleado(NombreCompleto,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password )
+values("Juan Perez", "Zona 12", "12345689", "1992-02-01", 1, "JPEREZ", 123456);
+
+Insert into empleado(NombreCompleto,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password )
+values("Ana Lilian", "Zona 1", "4654654", "1994-02-01", 1, "ALILIAN", 123456);
