@@ -16,8 +16,8 @@
                     <p>Pefil de Usuario</p>
                 </a>
             </li>
-            <li>
-                <a href="<?php echo base_url() ?>EmployeeNit">
+            <li class="active">
+                <a href="<?php echo base_url() ?>SearchNIT">
                     <i class="ti-view-list-alt"></i>
                     <p>Ver Empleados por NIT</p>
                 </a>
@@ -34,36 +34,12 @@
                     <p>Reportes Empleados por Puesto</p>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="<?php echo base_url() ?>home/EmployeeEarn">
                     <i class="ti-view-list-alt"></i>
                     <p>Reporte Empleados por Sueldo</p>
                 </a>
             </li>
-            <!--            <li>
-                            <a href="icons.html">
-                                <i class="ti-pencil-alt2"></i>
-                                <p>Icons</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="maps.html">
-                                <i class="ti-map"></i>
-                                <p>Maps</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="notifications.html">
-                                <i class="ti-bell"></i>
-                                <p>Notifications</p>
-                            </a>
-                        </li>
-                        <li class="active-pro">
-                            <a href="upgrade.html">
-                                <i class="ti-export"></i>
-                                <p>Upgrade to PRO</p>
-                            </a>
-                        </li>-->
         </ul>
     </div>
 </div>
@@ -75,14 +51,14 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="header">
-                            <h4 class="title">Reporte Empleados por Salario</h4>
-                            <p class="category">Ingrese una cantidad, presione buscar y obtendra los datos de los empleados con un salario mayor al ingresado</p>
+                            <h4 class="title">Busqueda Empleados por Nit</h4>
+<!--                            <p class="category">Ingrese un Nit </p>-->
                         </div>
                         <div style="margin-bottom: 25px" class="input-group">
-                            <input type="number" class="form-control border-input" name="sal" id ="sal" placeholder="Ingrese una cantidad">
+                            <input type="text" class="form-control border-input" name="nit" id ="nit" placeholder="Ingrese un nit">
                         </div>
                         <div class="col-sm-12 controls">
-                            <button type="submit" class="btn btn-primary" id ="pnLoginButon" onClick="getEmpleadosPorSueldo()">Buscar</button>
+                            <button type="submit" class="btn btn-primary" id ="pnLoginButon" onClick="getEmpleadoPorNit()">Buscar</button>
                         </div>
 
 
@@ -109,7 +85,7 @@
 
     <script type="text/javascript">
 
-        function getEmpleadosPorSueldo()
+        function getEmpleadoPorNit()
         {
             var sal = $("#sal").val();
             var xmlhttp = new XMLHttpRequest();
@@ -120,7 +96,7 @@
                                     
                 }
             };
-            xmlhttp.open("GET", "<?php echo base_url() ?>Reporte1/EmployeeEarn?sal="+sal, true);
+            xmlhttp.open("GET", "<?php echo base_url() ?>SearchNIT/EmployeeNIT?sal="+sal, true);
             xmlhttp.send();
         }
 	

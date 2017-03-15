@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Reporte1 extends CI_Controller {
+class SearchNIT extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -14,14 +14,14 @@ class Reporte1 extends CI_Controller {
         if (!isset($this->session->user1)) {
             $data["mainContent"] = "admin/logueo";
         } else {
-            $data["mainContent"] = "admin/report1_view";
+            $data["mainContent"] = "admin/busquedaNit_view";
         }
 
 
         $this->load->view("template", $data);
     }
 
-    public function EmployeeEarn() {
+    public function EmployeeNIT() {
         $sueldo = $this->input->get('sal');
 
         if ($sueldo != null) {

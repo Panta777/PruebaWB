@@ -17,7 +17,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo base_url() ?>EmployeeNit">
+                <a href="<?php echo base_url() ?>SearchNIT">
                     <i class="ti-view-list-alt"></i>
                     <p>Ver Empleados por NIT</p>
                 </a>

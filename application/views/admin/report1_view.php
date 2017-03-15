@@ -115,12 +115,13 @@
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    if(this.responseText !== "SIN EMPLEADOS"){
+                    if(this.responseText !=='"SIN EMPLEADOS'){
                         $("#tablaReport").show();
-                        document.getElementById("tablaReportBody").innerHTML = this.responseText;
-                                        
+                        document.getElementById("tablaReportBody").innerHTML = this.responseText;         
                     }
-                    else{ $("#tablaReport").hide();alert("Esta: " + this.responseText );}
+                    else{
+                        $("#tablaReport").hide();
+                        alert("Esta: " + this.responseText );}
 
                 }
             };
