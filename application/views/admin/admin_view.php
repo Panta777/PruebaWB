@@ -11,53 +11,35 @@
         </div>
         <ul class="nav">
             <li class="active">
-                <a href="user.html">
+                <a href="<?php echo base_url() ?>home">
                     <i class="ti-user"></i>
                     <p>Pefil de Usuario</p>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo base_url() ?>EmployeeNit">
                     <i class="ti-view-list-alt"></i>
                     <p>Ver Empleados por NIT</p>
                 </a>
             </li>
             <li>
-                <a href="table.html">
+                <a href="<?php echo base_url() ?>EmployeeAge">
                     <i class="ti-view-list-alt"></i>
-                    <p>Empleado por Nombre</p>
+                    <p>Reportes Empleados por Edad</p>
                 </a>
             </li>
             <li>
-                <a href="typography.html">
+                <a href="<?php echo base_url() ?>EmployeePuesto">
                     <i class="ti-view-list-alt"></i>
-                    <p>Empleados por Sueldo</p>
+                    <p>Reportes Empleados por Puesto</p>
                 </a>
             </li>
-            <!--            <li>
-                            <a href="icons.html">
-                                <i class="ti-pencil-alt2"></i>
-                                <p>Icons</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="maps.html">
-                                <i class="ti-map"></i>
-                                <p>Maps</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="notifications.html">
-                                <i class="ti-bell"></i>
-                                <p>Notifications</p>
-                            </a>
-                        </li>
-                        <li class="active-pro">
-                            <a href="upgrade.html">
-                                <i class="ti-export"></i>
-                                <p>Upgrade to PRO</p>
-                            </a>
-                        </li>-->
+            <li>
+                <a href="<?php echo base_url() ?>Reporte1">
+                    <i class="ti-view-list-alt"></i>
+                    <p>Reporte Empleados por Sueldo</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
@@ -67,10 +49,10 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
+<!--                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar bar1">algo1</span>
                     <span class="icon-bar bar2">akkgjdf</span>
-                    <span class="icon-bar bar3">dfad</span>
+                    <span class="icon-bar bar3">dfad</span>-->
                 </button>
                 <a class="navbar-brand" href="#">Perfil de Usuario</a>
             </div>
@@ -304,25 +286,25 @@ But that's the difference in our opinions.</textarea>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        // $("#pnLogoutButon").click(function(e){
     
-    <!--   Core JS Files   -->
-<script src="<?php echo base_url() . "assets/main/" ?>js/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="<?php echo base_url() . "assets/main/" ?>js/bootstrap.min.js" type="text/javascript"></script>
-
-<!--  Checkbox, Radio & Switch Plugins -->
-<script src="<?php echo base_url() . "assets/main/" ?>js/bootstrap-checkbox-radio.js"></script>
-
-<!--  Charts Plugin -->
-<script src="<?php echo base_url() . "assets/main/" ?>js/chartist.min.js"></script>
-
-<!--  Notifications Plugin    -->
-<script src="<?php echo base_url() . "assets/main/" ?>js/bootstrap-notify.js"></script>
-
-<!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-<script src="<?php echo base_url() . "assets/main/" ?>js/paper-dashboard.js"></script>
-
-<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-<script src="<?php echo base_url() . "assets/main/" ?>js/demo.js"></script>
+        function CloseSession()
+        {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    //   document.getElementById("txtHint").innerHTML = this.responseText;
+                    location.reload();
+                }
+            };
+            xmlhttp.open("GET", "<?php echo base_url() ?>User/logout", true);
+            xmlhttp.send();
+        }
+	
+   
+    </script>
 
 
 

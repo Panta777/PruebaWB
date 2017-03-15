@@ -49,8 +49,30 @@
 </style>
 <header>
     <div class="pnBar">
+        <?php
+        if (!isset($this->session->user1)) {
+            echo '<script type="text/javascript">
+            $(document).ready(function () {
 
+                demo.initChartist();
+
+                $.notify({
+                    icon: "ti-gift",
+                    message: "Bienvenido a <b>Control de Personal de Web Bussiness</b> -Ingrese sus datos para poder entrar al Sistema-."
+
+                }, {
+                    type: "info",
+                    timer: 4000
+                });
+
+            });
+        </script>';
+        } else {
+            echo '<button type="submit" class="btn btn-info btn-fill btn-wd" id ="pnLogoutButon" onClick="CloseSession()">Salir</button>';
+        }
+        ?>
         <img class="avatar border-white" src="<?php echo base_url() . "assets/main/img/" ?>Logootipo.png" alt="slgo" width ="50px" height="50px"/>
+
 
     </div>
 </header>

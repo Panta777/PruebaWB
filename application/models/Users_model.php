@@ -13,6 +13,8 @@ class Users_model extends CI_Model {
 	public function InsertUser($params){
 		return $this->db->insert('empleado', $params);
 	}
+        
+        
 	public function verifyUser($params){
 		$this->db->select("*");
 		$this->db->from("empleado");

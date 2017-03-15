@@ -9,10 +9,11 @@
             }
             ?>
 
-            <?php $this->load->view("theme/footer.php"); ?></div>
-
-    </div>
+            <?php $this->load->view("theme/footer.php"); ?>
+        </div></div>
 </body>
+
+
 <!--   Core JS Files   -->
 <script src="<?php echo base_url() . "assets/main/" ?>js/jquery-1.10.2.js" type="text/javascript"></script>
 <script src="<?php echo base_url() . "assets/main/" ?>js/bootstrap.min.js" type="text/javascript"></script>

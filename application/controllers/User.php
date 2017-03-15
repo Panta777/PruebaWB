@@ -27,18 +27,20 @@ class User extends CI_Controller {
     public function admin() {
         if ($this->session->user1 != null) {
             if ($this->input->post() == null) {
-               // $data["titleWeb"] = $this->titleHtml["esp"] . " - Administracion perfil ";
-                $data["mainContent"] = "admin1/admin_view";
-              $verifyUser = "correo = '" . $this->session->user1["correo"] . "'";
+// $data["titleWeb"] = $this->titleHtml["esp"] . " - Administracion perfil ";
+                $data["mainContent"] = "admin/admin_view";
+                $verifyUser = "correo = '" . $this->session->user1["correo"] . "'";
                 $temp = $this->users_model->verifyUser($verifyUser);
                 $data["userInfo"] = $temp;
                 $this->load->view("template", $data);
-            } 
+            }
         } else {
             echo "no session";
             redirect("home");
         }
     }
+
+ 
 
 }
 ?>
