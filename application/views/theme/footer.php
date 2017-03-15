@@ -15,7 +15,7 @@
                 </ul>
             </nav>
             <div class="copyright pull-right">
-                &copy; <script>document.write(new Date().getFullYear())</script>, Hecho por <i class="fa fa-heart heart"></i> by <a href="#">Panta Medrano</a>
+                &copy; <script>document.write(new Date().getFullYear())</script>, Hecho por  <a href="https://www.facebook.com/panta.medrano">Panta Medrano</a>
             </div>
         </div>
     </footer>
