@@ -27,8 +27,7 @@ class Home extends CI_Controller {
 //        $data["temas"] = $this->temas_model->get_temas($this->keyval["k"], $this->keyval["v"]);
 //        $data["titleWeb"] = $this->titleHtml["esp"];
 //		$data["servicios"] = $this->servicios_model->get_servicios();
-//		/* $this->debug->sD($data["servicios"]); */
-//        $data["puntos"] = $this->puntos_model->get_puntos();
+//		/* $this->debug->sD($data["servicios"]); *
 //        /* $data["js"][] = "nplugins/bxslider/jquery.bxslider.js";
 //        $data["css"][] = "nplugins/bxslider/jquery.bxslider.css";         */
 //		
@@ -37,8 +36,9 @@ class Home extends CI_Controller {
 //		
 //		
 //        $this->load->view("template", $data);
-
+        $data["activado"] = "home";
         if (!isset($this->session->user1)) {
+            $data["activado"] = "login";
             $data["mainContent"] = "admin/logueo";
         } else {
             $data["mainContent"] = "admin/admin_view";
@@ -89,7 +89,7 @@ class Home extends CI_Controller {
                 if ($empleados != null) {
                     foreach ($empleados as $pun) {
                         echo ' <tr> ';
-                        echo '<td>'.$pun["Nombre_Completo"]. '</td>';
+                        echo '<td>' . $pun["Nombre_Completo"] . '</td>';
                         echo '</tr>';
                     }
                 } else {

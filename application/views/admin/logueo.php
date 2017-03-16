@@ -24,13 +24,6 @@
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     <input id="pnPass" type="password" class="form-control" name="password" placeholder="PASSWORD">
                 </div>
-                <div class="input-group">
-                    <div class="checkbox">
-                        <label>
-                            <input id="login-remember" type="checkbox" name="remember" value="1">Recordarme
-                        </label>
-                    </div>
-                </div>
                 <div style="margin-top:10px" class="form-group">
                     <!-- Button -->
 
@@ -70,6 +63,7 @@
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                    // document.getElementById("txtHint").innerHTML = this.responseText;
+                   location.reload();
 
                 }
             };

@@ -26,8 +26,30 @@
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url() . "assets/main/css/" ?>themify-icons.css" rel="stylesheet">
 
+
+    <link href="<?php echo base_url() . "assets/main/" ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url() . "assets/main/" ?>css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
+    <script type="text/javascript">
+        // $("#pnLogoutButon").click(function(e){
+
+        function CloseSession()
+        {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    //   document.getElementById("txtHint").innerHTML = this.responseText;
+                    location.reload();
+                }
+            };
+            xmlhttp.open("GET", "<?php echo base_url() ?>User/logout", true);
+            xmlhttp.send();
+        }
+
+
+    </script>
 
 </head>
 <style type="text/css">

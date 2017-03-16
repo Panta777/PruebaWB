@@ -15,16 +15,6 @@ class Login_model extends CI_Model {
         $res = $this->db->get();
         return $res->result_array();
     }
-
-    public function set_tempdata() {
-        $this->session->set_tempdata('name', 'Uno de piera', 10);
-        redirect("home/get_tempdata");
-    }
-
-    public function get_tempdata() {
-        echo $this->session->tempdata("name");
-    }
-
 }
 
 ?>

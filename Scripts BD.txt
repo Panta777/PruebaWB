@@ -5,8 +5,7 @@ CREATE TABLE `rol` (
   `Sueldo` double DEFAULT NULL,
   `Disponible` char(1) COLLATE utf8_spanish_ci DEFAULT NULL COMMENT '0 = disponible, 1 = no disponible',
   PRIMARY KEY (`Id_Rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
+) 
 
 
 

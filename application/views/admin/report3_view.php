@@ -1,73 +1,4 @@
 
-<div class="sidebar" data-background-color="black" data-active-color="info">
-    <!--
-="primary | info | success | warning | danger"
-    -->
-    <div class="sidebar-wrapper">
-        <div class="logo">
-            <a href="" class="simple-text">
-                MENU PRINCIPAL
-            </a>
-        </div>
-        <ul class="nav">
-            <li >
-                <a href="<?php echo base_url() ?>home">
-                    <i class="ti-user"></i>
-                    <p>Pefil de Usuario</p>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo base_url() ?>EmployeeNit">
-                    <i class="ti-view-list-alt"></i>
-                    <p>Ver Empleados por NIT</p>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo base_url() ?>EmployeeAge">
-                    <i class="ti-view-list-alt"></i>
-                    <p>Reportes Empleados por Edad</p>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo base_url() ?>EmployeePuesto">
-                    <i class="ti-view-list-alt"></i>
-                    <p>Reportes Empleados por Puesto</p>
-                </a>
-            </li>
-            <li class="active">
-                <a href="<?php echo base_url() ?>home/EmployeeEarn">
-                    <i class="ti-view-list-alt"></i>
-                    <p>Reporte Empleados por Sueldo</p>
-                </a>
-            </li>
-            <!--            <li>
-                            <a href="icons.html">
-                                <i class="ti-pencil-alt2"></i>
-                                <p>Icons</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="maps.html">
-                                <i class="ti-map"></i>
-                                <p>Maps</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="notifications.html">
-                                <i class="ti-bell"></i>
-                                <p>Notifications</p>
-                            </a>
-                        </li>
-                        <li class="active-pro">
-                            <a href="upgrade.html">
-                                <i class="ti-export"></i>
-                                <p>Upgrade to PRO</p>
-                            </a>
-                        </li>-->
-        </ul>
-    </div>
-</div>
-
 <div class="main-panel">
     <div class="content">
         <div class="container-fluid">
@@ -75,14 +6,28 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="header">
-                            <h4 class="title">Reporte Empleados por Salario</h4>
-                            <p class="category">Ingrese una cantidad, presione buscar y obtendra los datos de los empleados con un salario mayor al ingresado</p>
+                            <h4 class="title">Reporte Empleados por Rango de Fecha Nacimiento</h4>
+                            <p class="category">Escoja un rango de Fechas</p>
+                            </br>   
                         </div>
-                        <div style="margin-bottom: 25px" class="input-group">
-                            <input type="number" class="form-control border-input" name="sal" id ="sal" placeholder="Ingrese una cantidad">
+                        <!--                        <div style="margin-bottom: 25px" class="input-group">
+                                                    <input type="number" class="form-control border-input" name="sal" id ="sal" placeholder="Ingrese una cantidad">
+                                                </div>-->
+                        <div class="form-group">
+                            <label for="dtp_input2" class="col-md-2 control-label">Fecha Inicial</label>
+                            <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                <input class="form-control" size="16" type="date" id="fechaIni">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+
+                            <label for="dtp_input2" class="col-md-2 control-label">Fecha Final</label>
+                            <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                <input class="form-control" size="16" type="date" id="fechaFinal" >
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
                         </div>
                         <div class="col-sm-12 controls">
-                            <button type="submit" class="btn btn-primary" id ="pnLoginButon" onClick="getEmpleadosPorSueldo()">Buscar</button>
+                            <button type="submit" class="btn btn-primary" id ="pnLoginButon" onClick="getEmpleadosPorFecha()">Buscar</button>
                         </div>
 
 
@@ -109,23 +54,28 @@
 
     <script type="text/javascript">
 
-        function getEmpleadosPorSueldo()
+        function getEmpleadosPorFecha()
         {
-            var sal = $("#sal").val();
+            var sal = $("#fechaIni").val();
+            var sal2= $("#fechaFinal").val();
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
+            xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     $(tablaReport).show();
                     document.getElementById("tablaReportBody").innerHTML = this.responseText;
-                                    
+
                 }
             };
-            xmlhttp.open("GET", "<?php echo base_url() ?>Reporte1/EmployeeEarn?sal="+sal, true);
+            xmlhttp.open("GET", "<?php echo base_url() ?>ReportePorEdad/EmployeeAge?fechaIni=" + sal+ "&fechaFin="+ sal2, true);
             xmlhttp.send();
         }
-	
-   
+
+
     </script>
+
+
+
+
 
 
 

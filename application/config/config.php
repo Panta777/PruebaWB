@@ -25,8 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   |
  */
 // $config['base_url'] = 'http://localhost/pronetweb/PronetWebPayVisa';
-//$config['base_url'] = 'http://localhost:8002/pruebawb/Prueba';
-$config['base_url'] = 'http://localhost/pruebawb/PruebaWB';
+$config['base_url'] = 'http://localhost:8002/pruebawb/Prueba';
+//$config['base_url'] = 'http://localhost/pruebawb/PruebaWB';
 
 /*
   |--------------------------------------------------------------------------
