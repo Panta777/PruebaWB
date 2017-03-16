@@ -4,28 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
-    private $keyval = array("key" => "", "val" => "");
-    private $titleHtml = array("eng" => "", "esp" => "");
+//    private $usu;
+//    private $pas;
 
     public function __construct() {
         parent::__construct();
-//        $this->keyval["k"] = "page";
-//        $this->keyval["v"] = "home";
-//        $this->titleHtml["eng"] = "We are (Pronet)";
-//        $this->titleHtml["esp"] = "Pronet Inicio (Pronet)";
+
         $this->load->model("Login_model");
-//        if (!isset($this->session->lang)) {
-//            $this->session->set_userdata("lang", "esp");
-//        }
     }
 
     public function index() {
-//        $data["mainContent"] = "home/home_view";
-//        $data["menu"] = $this->menu_model->get_menu();
-//        $data["images"] = $this->imagenes_model->get_menu($this->keyval["k"], $this->keyval["v"]);
-//        $data["title"] = $this->titulos_model->get_titulos($this->keyval["k"], $this->keyval["v"]);
-//        $data["temas"] = $this->temas_model->get_temas($this->keyval["k"], $this->keyval["v"]);
-//        $data["titleWeb"] = $this->titleHtml["esp"];
+
 //		$data["servicios"] = $this->servicios_model->get_servicios();
 //		/* $this->debug->sD($data["servicios"]); *
 //        /* $data["js"][] = "nplugins/bxslider/jquery.bxslider.js";
@@ -61,44 +50,52 @@ class Home extends CI_Controller {
                 if (count($a) > 0) {
                     $session = array(
                         "usuario" => $a[0]["usuario"],
-                        "hash" => bin2hex("user" . $a[0]["usuario"] . "-" . $a[0]["id"]),
+                        "hash" => bin2hex("user" . $a[0]["usuario"] . "-" . $a[0]["Id_Empleado"]),
                         "status" => "loged"
                     );
                     if (!isset($this->session->user1)) {
                         $this->session->set_userdata("user1", $session);
-                        echo "<script type='text/javascript'>
-							info1= 'loged';
-						</script>";
+                        $this->session->set_userdata("dataEmpleados",$this->Login_model->get_user($params));
+
+                        echo 'loged';
                     }
                 } else {
-                    echo "<script type='text/javascript'>
-							info1= 'usuario o contraseña invalido';
-						</script>";
+//                    echo "<script type='text/javascript'>
+//							var info1= 'usuario o contraseña invalido';
+//						</script>";
+                    echo 'usuario o contraseña invalida';
                 }
             }
         }
     }
 
-    public function EmployeeEarn() {
-        $sueldo = $this->input->get('sal');
+    public function EmployeeData() {
+        $nit = $this->input->get('sal');
 
-        if ($sueldo != null) {
-            if ($sueldo != "") {
+        if ($nit != null) {
+            if ($nit != "") {
+                $params = array(
+                    "usuario" => $usu);
+                $a = $this->Login_model->get_user($params);
 
-                $empleados = $this->Reports_model->getEmpleadosPorSueldo($sueldo);
+                $empleados = $this->Reports_model->getEmpleadosPorNIT($nit);
                 if ($empleados != null) {
                     foreach ($empleados as $pun) {
                         echo ' <tr> ';
+                        echo '<td>' . $pun["Id_Empleado"] . '</td>';
                         echo '<td>' . $pun["Nombre_Completo"] . '</td>';
+                        echo '<td>' . $pun["NIT"] . '</td>';
+                        echo '<td>' . $pun["Direccion"] . '</td>';
+                        echo '<td>' . $pun["NombrePuesto"] . '</td>';
                         echo '</tr>';
                     }
                 } else {
-                    echo "SIN EMPLEADOS";
+                    echo 'SIN EMPLEADOS';
                 }
             }
         }
-        $data["mainContent"] = "admin/report1_view";
-        $this->load->view("template", $data);
+//        $data["mainContent"] = "admin/report1_view";
+//        $this->load->view("template", $data);
     }
 
 }

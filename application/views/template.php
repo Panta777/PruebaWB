@@ -13,9 +13,10 @@
                 $this->load->view($mainContent);
             }
             ?>
-
             <?php $this->load->view("theme/footer.php"); ?>
-        </div></div>
+        </div>
+
+    </div>
 </body>
 
 

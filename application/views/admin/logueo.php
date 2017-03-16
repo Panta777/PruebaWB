@@ -1,7 +1,6 @@
 
 <div class="container"> 
-    <!--  Notifications Plugin    -->
-<!--    <script src="<? //php echo base_url() . "assets/main/"  ?>js/bootstrap-notify.js"></script>-->
+
 
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
         <div class="panel panel-info" >
@@ -62,8 +61,15 @@
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                   // document.getElementById("txtHint").innerHTML = this.responseText;
-                   location.reload();
+                    //document.getElementById("txtHint").innerHTML = this.responseText;
+                    var info1  = this.responseText
+                    
+                    if(info1== 'loged'){
+                        location.reload();
+                    }
+                    else{
+                        alert(info1);
+                    }
 
                 }
             };

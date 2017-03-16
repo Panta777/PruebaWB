@@ -9,32 +9,68 @@ CREATE TABLE `rol` (
 
 
 
+
 CREATE TABLE `empleado` (
   `Id_Empleado` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre_Completo` varchar(55) COLLATE utf8_spanish2_ci NOT NULL,
-  `Direccion` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
-  `Telefono` varchar(8) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `Nombre_Completo` varchar(55) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
+  `Direccion` varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `Telefono` varchar(8) CHARACTER SET utf8 COLLATE utf8_spanish2_ci DEFAULT NULL,
   `Fecha_Nac` date DEFAULT NULL,
   `id_rol` int(11) DEFAULT NULL,
-  `usuario` varchar(50) COLLATE utf8_spanish2_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `usuario` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `NIT` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`Id_Empleado`),
   KEY `fk_id_rol` (`id_rol`),
   CONSTRAINT `fk_id_rol` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`Id_Rol`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
+)
 
 truncate table rol;
 truncate table empleado;
 
 
-Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Administrador", "Administración", 8000, '0');
+Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Administrador", "Administraciï¿½n", 8000, '0');
 Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Gerente", "Gerencia", 28000, '0');
 Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Secretaria", "Archivos y Secretariado", 4000, '0');
 Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Contador", "Asunto Contables", 8000, '1');
 
-Insert into empleado(NombreCompleto,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password )
-values("Juan Perez", "Zona 12", "12345689", "1992-02-01", 1, "JPEREZ", 123456);
 
-Insert into empleado(NombreCompleto,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password )
-values("Ana Lilian", "Zona 1", "4654654", "1994-02-01", 1, "ALILIAN", 123456);
+
+Insert into empleado(Nombre_Completo,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password , NIT)
+values("Pedro Perez", "Zona 1", "4654654", "1990-02-01", 1, "PPEREZ", 123456, "45425-2");
+
+
+
+Insert into empleado(Nombre_Completo,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password , NIT)
+values("Ana Lopez", "Zona 1", "4654654", "1994-04-01", 2, "ALOPEZ", 123456, "424524-2");
+
+
+
+Insert into empleado(Nombre_Completo,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password , NIT)
+values("Pedro Perez", "Zona 1", "4654654", "1998-02-01", 3, "PPEREZ", 123456, "45425-2");
+
+
+
+Insert into empleado(Nombre_Completo,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password , NIT)
+values("Ana Lopez", "Zona 1", "4654654", "2000-02-01", 4, "ALOPEZ", 123456, "424524-2");
+
+
+
+Insert into empleado(Nombre_Completo,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password , NIT)
+values("Ana Mejia", "Zona 1", "4654654", "2000-02-01", 1, "AMEJIA", 123456, "4547-2");
+
+
+Insert into empleado(Nombre_Completo,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password , NIT)
+values("Juan Perez", "Zona 12", "12345689", "1992-02-01", 2, "JPEREZ", 123456,"22222-2");
+
+Insert into empleado(Nombre_Completo,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password , NIT)
+values("Ana Lilian", "Zona 1", "4654654", "1994-02-01", 3, "ALILIAN", 123456, "333333-3");
+
+Insert into empleado(Nombre_Completo,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password , NIT)
+values("Maria Mendoza", "Zona 1", "4654654", "1985-02-01", 3, "MMENDOZA", 123456, "4454-2");
+
+Insert into empleado(Nombre_Completo,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password , NIT)
+values("Josue Hernandez", "Zona 1", "4654654", "1975-02-01", 4, "JHERNANDEZ", 123456, "44545-2");
+
+Insert into empleado(Nombre_Completo,Direccion, Telefono, Fecha_Nac, id_rol, usuario, password , NIT)
+values("Norma Jerez", "Zona 1", "4654654", "1985-02-01", 3, "NJEREZ", 123456, "144254754-2");

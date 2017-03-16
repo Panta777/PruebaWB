@@ -45,8 +45,6 @@ class SearchNIT extends CI_Controller {
                 }
             }
         }
-//        $data["mainContent"] = "admin/report1_view";
-//        $this->load->view("template", $data);
     }
 
 }
