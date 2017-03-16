@@ -25,11 +25,9 @@ CREATE TABLE `empleado` (
   CONSTRAINT `fk_id_rol` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`Id_Rol`) ON DELETE CASCADE ON UPDATE CASCADE
 )
 
-truncate table rol;
-truncate table empleado;
 
 
-Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Administrador", "Administraci�n", 8000, '0');
+Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Administrador", "Administración", 8000, '0');
 Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Gerente", "Gerencia", 28000, '0');
 Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Secretaria", "Archivos y Secretariado", 4000, '0');
 Insert into rol(NombrePuesto, Descripcion, Sueldo, Disponible )values("Contador", "Asunto Contables", 8000, '1');
