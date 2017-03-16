@@ -12,6 +12,7 @@ class ReportePorEdad extends CI_Controller {
     public function index() {
 
         $data["activado"] = "ReportePorEdad";
+        
         if (!isset($this->session->user1)) {
             $data["activado"] = "login";
             $data["mainContent"] = "admin/logueo";

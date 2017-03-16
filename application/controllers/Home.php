@@ -15,16 +15,6 @@ class Home extends CI_Controller {
 
     public function index() {
 
-//		$data["servicios"] = $this->servicios_model->get_servicios();
-//		/* $this->debug->sD($data["servicios"]); *
-//        /* $data["js"][] = "nplugins/bxslider/jquery.bxslider.js";
-//        $data["css"][] = "nplugins/bxslider/jquery.bxslider.css";         */
-//		
-//		$data["js"][] = "nplugins/devrama/devslider.js";
-//        // $data["css"][] = "nplugins/devrama/jquery.bxslider.css";
-//		
-//		
-//        $this->load->view("template", $data);
         $data["activado"] = "home";
         if (!isset($this->session->user1)) {
             $data["activado"] = "login";
