@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',//medrano777.es
-	'username' => 'root',//u708521691_root
-	'password' => 'medrano7',//M
-	'database' => 'pruebawb',//u708521691_prWB
+	'hostname' => 'mysql.hostinger.es',//localhost medrano777.es
+	'username' => 'u708521691_root',//u708521691_root
+	'password' => 'Medrano7',//M
+	'database' => 'u708521691_prWB',//u708521691_prWB
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
